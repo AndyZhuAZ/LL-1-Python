@@ -1,5 +1,6 @@
 # LL(1)文法的递归下降分析程序
-a=0
+a = 0
+
 
 def read(self):  # 读文件到list
     with open(self) as result:
@@ -10,7 +11,7 @@ def read(self):  # 读文件到list
 
 
 def e():
-    print('E→TE′  ',expression[a])
+    print('E→TE′  ', expression[a])
     t()
     e1()
 
@@ -20,7 +21,7 @@ def e1():
     if expression[a] is '+':
         print('E′→+TE′', expression[a])
         # global a
-        a= a+1
+        a = a + 1
         t()
         e1()
     else:
@@ -29,7 +30,7 @@ def e1():
 
 
 def t():
-    print('T→FT′  ',expression[a])
+    print('T→FT′  ', expression[a])
     f()
     t1()
 
@@ -57,12 +58,14 @@ def f():
             print('F→(E) ', expression[a])
             # global a
             a = a + 1
-        else:print('erro')
+        else:
+            print('erro')
     elif expression[a] is 'i':
         print('F→i    ', expression[a])
         # global a
         a = a + 1
-    else:print('erro')
+    else:
+        print('erro')
 
 
 if __name__ == '__main__':
